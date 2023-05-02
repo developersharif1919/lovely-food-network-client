@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { useState } from "react";
 import { useEffect } from "react";
@@ -30,7 +30,15 @@ const AuthProvider = ({children}) => {
             throw error;
           });
       };
+
+      const loginUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+      };
       
+      const logOut = () => {
+        return signOut(auth);
+      };
+
       useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {
           setUser(loggedInUser);
@@ -40,7 +48,7 @@ const AuthProvider = ({children}) => {
         };
       }, []);
     
-      const authInfo = { registerUser, user};
+      const authInfo = { registerUser, user, logOut, loginUser};
       return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
       );

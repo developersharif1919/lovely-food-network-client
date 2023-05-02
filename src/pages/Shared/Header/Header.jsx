@@ -7,7 +7,7 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import { Button } from 'react-bootstrap';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [showName, setShowName] = useState(false);
 
     const handleMouseEnter = () => {
@@ -18,6 +18,14 @@ const Header = () => {
         setShowName(false);
     };
     console.log(user);
+
+    const handleLogout = () => {
+        logOut()
+          .then()
+          .catch((err) => {
+            console.log(err);
+          });
+      };
     return (
         <Container className='mt-4'>
             <div>
@@ -42,7 +50,7 @@ const Header = () => {
                             >
                                 {user.displayName}
                             </div>
-                            <button type="button" className="btn btn-outline-success  fw-bold px-4 ms-2">
+                            <button onClick={handleLogout} type="button" className="btn btn-outline-success  fw-bold px-4 ms-2">
                                 Logout
                             </button>
                         </div>
@@ -60,6 +68,7 @@ const Header = () => {
                 {/* Header Bottom */}
                 <div className='text-center mt-3'>
                     <Link to="/" className='text-decoration-none ms-2'>Home</Link>
+                    <Link to="/recipe" className='text-decoration-none ms-2'>Chef-Recipe </Link>
                     <Link to="/blogs" className='text-decoration-none ms-2'>Blogs</Link>
                     <Link to="/register" className='text-decoration-none ms-2'>Register</Link>
                 </div>

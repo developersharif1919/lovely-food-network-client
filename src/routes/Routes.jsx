@@ -6,6 +6,8 @@ import Blogs from "../pages/Blogs/Blogs";
 import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import Recipe from "../pages/Recipe/Recipe";
 
 
 const router = createBrowserRouter([
@@ -20,7 +22,15 @@ const router = createBrowserRouter([
             {
                 path:'/blogs',
                 element: <Blogs></Blogs>
-            }
+            },
+            {
+                path: ":id",
+                element: (
+                  <PrivateRoute>
+                    <Recipe></Recipe>
+                  </PrivateRoute>
+                ),
+              }
         ],
     },
     {
