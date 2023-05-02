@@ -11,7 +11,7 @@ import { Navigate, useLocation, useNavigate } from "react-router";
 
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, handleGoogleSignIn } = useContext(AuthContext)
   let navigate = useNavigate();
 
     const [email, setEmail] = useState("");
@@ -31,7 +31,7 @@ const Login = () => {
     }
   };
     return (
-        <Container className='w-25 mx-auto'>
+        <Container className='w-50 mx-auto'>
             <h3>Please Login</h3>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -54,8 +54,9 @@ const Login = () => {
                 <Form.Text className="text-secondary">
                     Don't Have an Account? <Link to="/register">Register</Link>
                 </Form.Text>
-                <Form.Text className="text-success">
-
+                <Form.Text className="text-success d-flex justify-content-center gap-5 mt-3 mb-5">
+                   <Button onClick={handleGoogleSignIn} className="mr-2">Google Sign-in</Button>
+                   <Button>GitHub Sign-in</Button>
                 </Form.Text>
                 <Form.Text className="text-danger">
 
