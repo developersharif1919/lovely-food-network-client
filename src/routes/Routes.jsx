@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: ()=>fetch(`http://localhost:5000/topChef/`)
+                loader: ()=>fetch(`https://lovely-food-network-server-developersharif1919.vercel.app/topChef/`)
             },
             {
                 path:'/blogs',
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
                     <ChefRecipe></ChefRecipe>
                   </PrivateRoute>
                 ),
-                loader: ({params}) => fetch(`http://localhost:5000/topChef/${params.id}`)
+                loader: ({params}) => fetch(`https://lovely-food-network-server-developersharif1919.vercel.app/topChef/${params.id}`)
               }
         ],
     },
