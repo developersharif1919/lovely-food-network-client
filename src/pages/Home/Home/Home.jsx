@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import RecipeCarousel from '../../RecipeCarousel/RecipeCarousel';
 
 const Home = () => {
     return (
         <div className='text-center'>
-            <h2>This Is Home</h2>
+            <RecipeCarousel></RecipeCarousel>
         </div>
     );
 };

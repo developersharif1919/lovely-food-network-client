@@ -27,11 +27,11 @@ const Header = () => {
           });
       };
     return (
-        <Container className='mt-4'>
-            <div>
+        <div className='mt-4 container-fluid' style={{background:'#111',paddingTop:'20px', paddingBottom:'20px'}}>
+            <div className='container'>
                 {/* Header Top */}
-                <div className='d-flex justify-content-between align-items-center border'>
-                    <div className="logo text-success">
+                <div className='d-flex justify-content-between align-items-center border border-success py-3 px-2 mt-2'>
+                    <div className="logo text-white">
                         <h2>Lovely Food Network</h2>
                     </div>
                     {user ? (
@@ -46,7 +46,7 @@ const Header = () => {
                                 className={`position-absolute bg-white rounded p-1 ${
                                     showName ? "" : "d-none"
                                 }`}
-                                style={{ top: "6%", right: "25%", transform: "translateY(0)" }}
+                                style={{ top: "12%", right: "25%", transform: "translateY(0)" }}
                             >
                                 {user.displayName}
                             </div>
@@ -66,14 +66,14 @@ const Header = () => {
                     )}
                 </div>
                 {/* Header Bottom */}
-                <div className='text-center mt-3'>
-                    <Link to="/" className='text-decoration-none ms-2'>Home</Link>
-                    <Link to="/recipe" className='text-decoration-none ms-2'>Chef-Recipe </Link>
-                    <Link to="/blogs" className='text-decoration-none ms-2'>Blogs</Link>
-                    <Link to="/register" className='text-decoration-none ms-2'>Register</Link>
+                <div className='text-center  mt-3'>
+                    <Link to="/" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Home</Link>
+                    <Link to="/recipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link>
+                    <Link to="/blogs" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Blogs</Link>
+                    <Link to="/register" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Register</Link>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

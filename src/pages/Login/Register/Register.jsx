@@ -36,7 +36,7 @@ const Register = () => {
       };
 
     return (
-        <Container className='w-25 mx-auto'>
+        <Container className='w-50 mx-auto'>
             <h3>Please Register</h3>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicName">
