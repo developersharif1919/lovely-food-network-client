@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../../../provider/AuthProvider';
 import { Button } from 'react-bootstrap';
+import ActiveLink from '../../../components/ActiveLink/ActiveLink';
+import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -21,13 +23,13 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-          .then()
-          .catch((err) => {
-            console.log(err);
-          });
-      };
+            .then()
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
-        <div className='mt-4 container-fluid' style={{background:'#111',paddingTop:'20px', paddingBottom:'20px'}}>
+        <div className='mt-4 container-fluid' style={{ background: '#111', paddingTop: '20px', paddingBottom: '20px' }}>
             <div className='container'>
                 {/* Header Top */}
                 <div className='d-flex justify-content-between align-items-center border border-success py-3 px-2 mt-2'>
@@ -43,9 +45,8 @@ const Header = () => {
                                 onMouseLeave={handleMouseLeave} width="40" height="40" className="rounded-circle me-2"
                             />
                             <div
-                                className={`position-absolute bg-white rounded p-1 ${
-                                    showName ? "" : "d-none"
-                                }`}
+                                className={`position-absolute bg-white rounded p-1 ${showName ? "" : "d-none"
+                                    }`}
                                 style={{ top: "12%", right: "25%", transform: "translateY(0)" }}
                             >
                                 {user.displayName}
@@ -66,11 +67,13 @@ const Header = () => {
                     )}
                 </div>
                 {/* Header Bottom */}
-                <div className='text-center  mt-3'>
-                    <Link to="/" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Home</Link>
-                    {/* <Link to="/ChefRecipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link> */}
-                    <Link to="/blogs" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Blogs</Link>
-                    <Link to="/register" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Register</Link>
+                <div className='text-center mt-3'>
+                    <ul className='d-flex justify-content-center gap-5'>
+                        <li> <ActiveLink to="/" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Home</ActiveLink></li>
+                        {/* <Link to="/ChefRecipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link> */}
+                        <li><ActiveLink to="/blogs" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Blogs</ActiveLink></li>
+                        <li><ActiveLink to="/register" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Register</ActiveLink></li>
+                    </ul>
                 </div>
             </div>
         </div>
