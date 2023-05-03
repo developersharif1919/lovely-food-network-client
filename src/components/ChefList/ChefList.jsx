@@ -1,9 +1,18 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ChefList = (chefData) => {
     const {id, chefPictureUrl, chefName, numberOfProjects, numberOfRecipes, yearsOfExperience, likes} = chefData.chefData;
+
+    const navigate = useNavigate();
+
+    const handleNavigation = (id)=> {
+        navigate(`/ChefRecipe/${id}`)
+     }
+
     return (
         <Card style={{height:'500px'}}>
           <Card.Img variant="top" src={chefPictureUrl} />
@@ -14,7 +23,7 @@ const ChefList = (chefData) => {
             <Card.Text>Number Of Recipes: {numberOfRecipes}</Card.Text>
           </Card.Body>
           <Card.Footer className='p-0'>
-            <Button variant="outline-success" className='w-100 h-100'>View Recipe</Button>
+            <Button onClick={()=>handleNavigation(id)} variant="outline-success" className='w-100 h-100'>View Recipe</Button>
           </Card.Footer>
         </Card>
     );

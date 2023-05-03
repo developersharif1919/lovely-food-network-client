@@ -68,7 +68,7 @@ const Header = () => {
                 {/* Header Bottom */}
                 <div className='text-center  mt-3'>
                     <Link to="/" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Home</Link>
-                    <Link to="/recipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link>
+                    {/* <Link to="/ChefRecipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link> */}
                     <Link to="/blogs" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Blogs</Link>
                     <Link to="/register" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Register</Link>
                 </div>
