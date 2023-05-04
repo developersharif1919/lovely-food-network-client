@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
 import { GrAed } from "react-icons/gr";
+import { HiStar} from "react-icons/hi";
+import { BsStarHalf } from "react-icons/bs";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -50,7 +52,7 @@ const ChefSpecialRecipes = ({ recipe }) => {
                 </Card.Body>
                 <Card.Footer className='p-2'>
                     <div className='d-flex justify-content-between align-items-center'>
-                        <Card.Text>Ratings: {recipe.ratings.number} </Card.Text>
+                        <Card.Text style={{color:'orange'}}> <span style={{color:'black'}}>Ratings:</span> <HiStar></HiStar><HiStar></HiStar><HiStar></HiStar><HiStar></HiStar> <BsStarHalf></BsStarHalf> {recipe.ratings.number} </Card.Text>
                         <button disabled={isFavorite} onClick={handleAddToFavorites} className='btn fs-2'><GrAed /></button>
                     </div>
                 </Card.Footer>

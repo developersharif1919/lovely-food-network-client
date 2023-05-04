@@ -1,8 +1,8 @@
-ul li{
+ li{
     list-style: none;
     padding:10px 20px;
 }
-ul li a{
+ li a{
     text-decoration: none;
     color:green;
 }

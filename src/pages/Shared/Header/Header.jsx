@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../../../provider/AuthProvider';
-import { Button } from 'react-bootstrap';
 import ActiveLink from '../../../components/ActiveLink/ActiveLink';
 import './Header.css'
 
@@ -29,54 +28,42 @@ const Header = () => {
             });
     };
     return (
-        <div className='mt-4 container-fluid' style={{ background: '#111', paddingTop: '20px', paddingBottom: '20px' }}>
-            <div className='container'>
-                {/* Header Top */}
-                <div className='d-flex justify-content-between align-items-center border border-success py-3 px-2 mt-2'>
-                    <div className="logo text-white">
-                        <h2>Lovely Food Network</h2>
-                    </div>
+        <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+            <Container>
+                <Navbar.Brand>
+                    <h2>Lovely Food Network</h2>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbar-nav" />
+                <Navbar.Collapse id="navbar-nav">
+                    <Nav className="m-auto nav-itm">
+                        <li><ActiveLink to="/" className='nav-link'>Home</ActiveLink></li>
+                        <li><ActiveLink to="/blogs" className='nav-link list-style-none'>Blogs</ActiveLink></li>
+                        <li><ActiveLink to="/register" className='nav-link'>Register</ActiveLink></li>
+                    </Nav>
                     {user ? (
-                        <div>
-                            <img
-                                src={user.photoURL}
-                                alt=""
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave} width="40" height="40" className="rounded-circle me-2"
-                            />
-                            <div
-                                className={`position-absolute bg-white rounded p-1 ${showName ? "" : "d-none"
-                                    }`}
-                                style={{ top: "12%", right: "25%", transform: "translateY(0)" }}
-                            >
-                                {user.displayName}
+                        <div className="d-flex align-items-center">
+                            <div className="me-3">
+                                <img src={user.photoURL} alt=""
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    width="40" height="40" className="rounded-circle" />
+                                <div className={`position-absolute bg-white rounded p-1 ${showName ? "" : "d-none"}`}
+                                    style={{ top: "15%", right: "20%", transform: "translateY(0)" }}>
+                                    {user.displayName}
+                                </div>
                             </div>
-                            <button onClick={handleLogout} type="button" className="btn btn-outline-success  fw-bold px-4 ms-2">
-                                Logout
-                            </button>
+                            <Button variant="outline-success" className="fw-bold" onClick={handleLogout}>Logout</Button>
                         </div>
                     ) : (
-                        <div className="menu-container d-flex fs-4 fw-bold justify-content-between align-items-center ">
-                            <FaUserCircle></FaUserCircle>
-                            <Link to="/login">
-                                <button type="button" className="btn btn-outline-success  fw-bold px-4 ms-2">
-                                    Login
-                                </button>
-                            </Link>
-                        </div>
+                        <Link to="/login">
+                            <Button variant="outline-success" className="fw-bold me-2">
+                                <FaUserCircle /> Login
+                            </Button>
+                        </Link>
                     )}
-                </div>
-                {/* Header Bottom */}
-                <div className='text-center mt-3'>
-                    <ul className='d-flex justify-content-center gap-5'>
-                        <li> <ActiveLink to="/" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Home</ActiveLink></li>
-                        {/* <Link to="/ChefRecipe" className='text-decoration-none ms-2 text-white border px-2 py-1 rounded border-success'>Chef-Recipe </Link> */}
-                        <li><ActiveLink to="/blogs" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Blogs</ActiveLink></li>
-                        <li><ActiveLink to="/register" className=' ms-2 text-white border px-2 py-1 rounded border-success'>Register</ActiveLink></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 };
 

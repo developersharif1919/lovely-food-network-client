@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const ChefList = (chefData) => {
     const {id, chefPictureUrl, chefName, numberOfProjects, numberOfRecipes, yearsOfExperience, likes} = chefData.chefData;
@@ -15,7 +17,9 @@ const ChefList = (chefData) => {
 
     return (
         <Card style={{height:'500px'}}>
+          <LazyLoad>
           <Card.Img variant="top" src={chefPictureUrl} />
+          </LazyLoad>
           <Card.Body>
             <Card.Title className='mt-4'>{chefName}</Card.Title>
             <Card.Text>Experience: {yearsOfExperience}</Card.Text>

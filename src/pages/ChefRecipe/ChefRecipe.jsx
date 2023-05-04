@@ -2,8 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Spinner } from 'react-bootstrap';
 import ChefSpecialRecipes from '../../components/ChefSpecialRecipes/ChefSpecialRecipes';
+import LazyLoad from 'react-lazy-load';
 
 
 const ChefRecipe = () => {
@@ -11,12 +12,17 @@ const ChefRecipe = () => {
 
     const [recipeData, setRecipeData] = useState(null);
     const [recipes, setRecipes] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(`https://lovely-food-network-server-developersharif1919.vercel.app/recipes/${data.id}`)
             .then(response => response.json())
-            .then(data => setRecipeData(data));
+            .then(data => {
+                setRecipeData(data);
+                setLoading(false);
+            });
     }, [data.id]);
+
     useEffect(() => {
         if (recipeData !== null) {
             setRecipes(recipeData.recipes);
@@ -30,9 +36,11 @@ const ChefRecipe = () => {
                 <Container>
                     <Row className='d-flex justify-content-between border'>
                         <Col sm={12} md={6} >
-                            <Image src={data.chefPictureUrl} fluid />
+                                <LazyLoad>
+                                    <Image src={data.chefPictureUrl} fluid />
+                                </LazyLoad>
                         </Col>
-                        <Col sm={12} md={6} className="d-flex align-items-center justify-content-end" style={{ textlign: 'right' }}>
+                        <Col sm={12} md={6} className="d-flex align-items-center justify-content-end" style={{ textAlign: 'right' }}>
                             <div>
                                 <h1>Chef Name: {data.chefName}</h1>
                                 <p>Chef Bio: Some descriptive text goes here.</p>
