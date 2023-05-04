@@ -18,8 +18,6 @@ const Header = () => {
     const handleMouseLeave = () => {
         setShowName(false);
     };
-    console.log(user);
-
     const handleLogout = () => {
         logOut()
             .then()

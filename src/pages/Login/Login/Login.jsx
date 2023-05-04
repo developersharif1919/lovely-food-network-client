@@ -6,7 +6,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from '../../../provider/AuthProvider';
-
+import { AiFillGoogleSquare, AiOutlineGithub } from "react-icons/ai";
 import { Navigate, useLocation, useNavigate } from "react-router";
 
 
@@ -55,8 +55,8 @@ const Login = () => {
                     Don't Have an Account? <Link to="/register">Register</Link>
                 </Form.Text>
                 <Form.Text className="text-success d-flex justify-content-center gap-5 mt-3 mb-5">
-                   <Button onClick={handleGoogleSignIn} className="mr-2">Google Sign-in</Button>
-                   <Button onClick={handleGitHubSignIn}>GitHub Sign-in</Button>
+                   <Button variant="outline-success" onClick={handleGoogleSignIn} className="mr-2 w-100"> <AiFillGoogleSquare className="fs-1"></AiFillGoogleSquare> Google Sign-in</Button>
+                   <Button variant="outline-success" onClick={handleGitHubSignIn} className="w-100"> <AiOutlineGithub className="fs-1"></AiOutlineGithub> GitHub Sign-in</Button>
                 </Form.Text>
                 <Form.Text className="text-danger">
 

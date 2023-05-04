@@ -29,7 +29,6 @@ const ChefRecipe = () => {
         }
     }, [recipeData]);
 
-    // console.log('ssss',data)
     return (
         <div className='text-center mt-5'>
             <div>
