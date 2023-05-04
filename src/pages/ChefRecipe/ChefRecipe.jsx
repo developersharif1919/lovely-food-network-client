@@ -13,7 +13,7 @@ const ChefRecipe = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/recipes/${data.id}`)
+        fetch(`https://lovely-food-network-server-developersharif1919.vercel.app/recipes/${data.id}`)
             .then(response => response.json())
             .then(data => setRecipeData(data));
     }, [data.id]);

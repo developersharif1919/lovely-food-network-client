@@ -10,14 +10,14 @@ const ChefSpecialRecipes = ({ recipe }) => {
     const ingredients = recipe.ingredients;
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const handleAddToFavourites = () => {
+    const handleAddToFavorites = () => {
         if (isFavorite) {
-            toast.error('Recipe already added to favourites!');
+          toast.error('Recipe already added to favorites!');
         } else {
-            setIsFavorite(true);
-            toast.success('Recipe added to favourites!');
+          setIsFavorite(true);
+          toast.success('Recipe added to favorites!');
         }
-    };
+      };
 
     return (
         <div>
@@ -35,23 +35,23 @@ const ChefSpecialRecipes = ({ recipe }) => {
                     theme="light"
                 />
             </div>
-            <Card>
+            <Card style={{height:'900px'}}>
                 <Card.Img variant="top" src={recipe.photo_url} />
                 <Card.Body>
-                    <Card.Title className='mt-4'>{recipe.recipe_title}</Card.Title>
-                    <Card.Text>Experience:{recipe.yearsOfExperience} </Card.Text>
-                    <Card.Text>Cooking Method: {recipe.cooking_method} </Card.Text>
-                    <div className='d-flex justify-content-center'>
-                        <h6>Ingredients:</h6>
-                        <ul>
-                            {ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+                    <Card.Title className='mt-4'><span style={{color:'orange',fontWeight:'800'}}>{recipe.recipe_title}</span></Card.Title>
+                    <Card.Text><span style={{color:'green',fontWeight:'700'}}>Experience:</span> {recipe.yearsOfExperience} Years </Card.Text>
+                    <Card.Text> <span style={{color:'green',fontWeight:'700'}}>Cooking Method:</span> {recipe.cooking_method} </Card.Text>
+                    <div className='mt-3'>
+                        <h6 ><span style={{color:'green',fontWeight:'700'}}>Ingredients:</span></h6>
+                        <ul className='text-left'>
+                            {ingredients.map(ingredient => <p className='p-0 m-0' style={{textAlign:'left'}} key={ingredient}>{ingredient}</p>)}
                         </ul>
                     </div>
                 </Card.Body>
                 <Card.Footer className='p-2'>
                     <div className='d-flex justify-content-between align-items-center'>
                         <Card.Text>Ratings: {recipe.ratings.number} </Card.Text>
-                        <button onClick={handleAddToFavourites} className='btn fs-2'><GrAed /></button>
+                        <button disabled={isFavorite} onClick={handleAddToFavorites} className='btn fs-2'><GrAed /></button>
                     </div>
                 </Card.Footer>
             </Card>
