@@ -4,6 +4,7 @@ import RecipeCarousel from '../../RecipeCarousel/RecipeCarousel';
 import TopChef from '../../../components/TopChef/TopChef';
 
 import { Spinner } from 'react-bootstrap';
+import ContactSection from '../../../components/ContactSection/ContactSection';
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +24,7 @@ const Home = () => {
           <>
             <RecipeCarousel />
             <TopChef />
+            <ContactSection></ContactSection>
           </>
         )}
       </div>
