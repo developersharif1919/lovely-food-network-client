@@ -5,7 +5,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const ContactSection = () => {
   return (
-    <section id="contact">
+    <section id="contact" className='mb-5'>
       <Container>
         <Row className='align-items-center'>
           <Col md={6}>

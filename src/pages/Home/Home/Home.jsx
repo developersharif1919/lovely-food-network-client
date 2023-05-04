@@ -5,6 +5,7 @@ import TopChef from '../../../components/TopChef/TopChef';
 
 import { Spinner } from 'react-bootstrap';
 import ContactSection from '../../../components/ContactSection/ContactSection';
+import CustomerReview from '../../../components/CustomerReview/CustomerReview';
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ const Home = () => {
           <>
             <RecipeCarousel />
             <TopChef />
+            <CustomerReview></CustomerReview>
             <ContactSection></ContactSection>
           </>
         )}
