@@ -6,7 +6,8 @@ import TopChef from '../../../components/TopChef/TopChef';
 import { Spinner } from 'react-bootstrap';
 import ContactSection from '../../../components/ContactSection/ContactSection';
 import CustomerReview from '../../../components/CustomerReview/CustomerReview';
-import UsRecipe from '../../../components/UsRecipe/UsRecipe';
+import ChineseRecipes from '../../../components/ChineseRecipes/ChineseRecipes';
+
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +25,7 @@ const Home = () => {
       </div>
         ) : (
           <>
-            <UsRecipe></UsRecipe>
+            <ChineseRecipes></ChineseRecipes>
             <RecipeCarousel />
             <TopChef />
             <CustomerReview></CustomerReview>

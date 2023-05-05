@@ -22,7 +22,7 @@ function TopChef() {
 
     return (
         <Container className='mt-5 mb-5'>
-            <h2 className='mt-5 mb-5'>TOP CHEFS</h2>
+            <h2 className='mt-5 mb-5' style={{color:'green',fontWeight:'800'}}>TOP CHEFS</h2>
             <Row xs={1} sm={2} md={3} className="g-4">
                 {data.data.map((chefData) => (
                     <Col key={chefData.id}>

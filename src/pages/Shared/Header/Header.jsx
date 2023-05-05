@@ -53,11 +53,14 @@ const Header = () => {
                             <Button variant="outline-success" className="fw-bold" onClick={handleLogout}>Logout</Button>
                         </div>
                     ) : (
-                        <Link to="/login">
+                        <div>
+                             <FaUserCircle className='text-white me-2 fs-2'></FaUserCircle>
+                            <Link to="/login">
                             <Button variant="outline-success" className="fw-bold me-2">
-                                <FaUserCircle /> Login
+                                Login
                             </Button>
                         </Link>
+                        </div>
                     )}
                 </Navbar.Collapse>
             </Container>
