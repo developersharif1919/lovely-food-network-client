@@ -19,7 +19,7 @@ const RecipeCarousel = () => {
     {
       name: 'Bang Bang Chicken',
       description: 'Combine potato starch, flour, salt, pepper, and shichimi in a medium bowl. Pour into a large plastic resealable bag. Add chicken; seal the bag and shake until chicken is well coated.',
-      bgImageUrl: 'https://thumbs.dreamstime.com/b/top-vertical-view-table-full-food-drinks-happy-people-friends-celebrating-enjoy-together-eating-having-fun-concept-social-179552095.jpg',
+      bgImageUrl: 'https://img.freepik.com/free-photo/top-view-tasty-meat-soup-with-potatoes-greens-dark-desk_140725-76932.jpg?w=740&t=st=1683282182~exp=1683282782~hmac=3ba3c04115db4861fceabb003317802cc8ca54a9d66994a24859364a9a7e726e',
       imageUrl:'https://img.freepik.com/free-photo/chicken-prepared-sauce-served-with-lemon-slices_141793-1148.jpg?w=740&t=st=1683206379~exp=1683206979~hmac=4295feb9442e8995657f920c8e5bf24d34238e39148bcd7dd029eac0b903d6c9'
     },
   ];
