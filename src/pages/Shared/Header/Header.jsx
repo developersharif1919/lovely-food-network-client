@@ -29,7 +29,7 @@ const Header = () => {
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
             <Container>
                 <Navbar.Brand>
-                    <h2>Lovely Food Network</h2>
+                    <Link  style={{textDecoration:'none',color:'white'}} to='/'><h2 className=''>Lovely Food Network</h2></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">

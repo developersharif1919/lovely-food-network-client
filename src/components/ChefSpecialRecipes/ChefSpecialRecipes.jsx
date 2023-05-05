@@ -40,7 +40,7 @@ const ChefSpecialRecipes = ({ recipe }) => {
                 />
             </div>
             <Card style={{height:'900px'}}>
-                <Card.Img  variant="top" src={recipe.photo_url} />
+                <Card.Img style={{height:'240px'}} variant="top" src={recipe.photo_url} />
                 <Card.Body>
                     <Card.Title className='mt-4' style={{textAlign:'left'}}><span style={{color:'orange',fontWeight:'800'}}>{recipe.recipe_title}</span></Card.Title>
                     <div className='mt-3'>

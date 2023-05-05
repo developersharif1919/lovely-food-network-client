@@ -18,7 +18,7 @@ const ChefList = (chefData) => {
     return (
         <Card style={{height:'600px'}}>
           <LazyLoad>
-          <Card.Img variant="top" src={chefPictureUrl} />
+          <Card.Img style={{height:'240px'}} variant="top" src={chefPictureUrl} />
           </LazyLoad>
           <Card.Body>
             <Card.Title className='mt-4'>{chefName}</Card.Title>
