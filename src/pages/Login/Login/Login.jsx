@@ -33,7 +33,7 @@ const Login = () => {
           navigate("/");
         })
         .catch((error) => {
-          console.log(error.message);
+          setErrorMessage('User Not Found!.Please Enter Correct Email Or Password');
         })
         .finally(() => setLoading(false)); // set loading to false after login is complete
     } else {
